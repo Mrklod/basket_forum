@@ -1,0 +1,75 @@
+/* Общие стили */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header, nav, main, footer {
+  display: block;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Стили для заголовка */
+header {
+  background-color: #f2f2f2;
+  padding: 10px 20px;
+}
+
+h1 {
+  margin: 0;
+}
+
+/* Стили для навигации */
+nav {
+  background-color: #333;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  color: #fff;
+}
+
+.register-btn {
+  background-color: #ff4500;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.register-btn:hover {
+  background-color: #ff6347;
+}
+
+/* Стили для основного содержимого */
+main {
+  padding: 20px;
+}
+
+/* Стили для подвала */
+footer {
+  background-color: #f2f2f2;
+  text-align: center;
+  padding: 10px 20px;
+}
