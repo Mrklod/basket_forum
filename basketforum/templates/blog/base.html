@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    {% block style %}
+    {% endblock style %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <title>Баскетбольный форум</title>
   </head>
@@ -12,15 +14,16 @@
     </header>
     <nav>
       <ul>
-        <li><a href="#">Главная</a></li>
-        <li><a href="#">Форумы</a></li>
-        <li><a href="#">Правила</a></li>
-        <li><a href="#">Вход</a></li>
-        <li><a href="#" class="register-btn">Регистрация</a></li>
+        <li><a href="{% url 'main' %}">Главная</a></li>
+        <li><a href="{% url 'posts' %}">Посты</a></li>
+        <li><a href="{% url 'rule' %}">Правила</a></li>
+        <li><a href="{% url 'login' %}">Вход</a></li>
+        <li><a href="{% url 'register' %}" class="register-btn">Регистрация</a></li>
       </ul>
     </nav>
     <main>
-      <!-- Основное содержимое страницы -->
+  {% block content %}
+  {% endblock content %}
     </main>
     <footer>
       <p>© 2023 Баскетбольный форум</p>

@@ -1,0 +1,29 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+{% endblock style %}
+
+{% block content %}
+  <body>
+    <form class="registration-form" action="{% url 'register' %}" method="post">
+      {% csrf_token %}
+      <label for="{{form.username.id_for_label}}">Имя пользователя:</label>
+      {{ form.username }}
+
+      <label for="{{form.email.id_for_label}}">Почта:</label>
+      {{ form.email }}
+
+      <label for="{{form.password1.id_for_label}}">Пароль:</label>
+      {{ form.password1 }}
+
+      <label for="{{form.password2.id_for_label}}">Повторите пароль:</label>
+      {{ form.password2 }}
+
+      <button type="submit" class="registration-form__submit-button">Зарегистрироваться</button>
+    </form>
+  </body>
+{% endblock content %}
