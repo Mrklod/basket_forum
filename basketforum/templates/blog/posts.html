@@ -1,6 +1,10 @@
 {% extends 'blog/base.html' %}
 {% load static %}
 
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/button.css' %}">
+{% endblock style %}
+
 {% block content %}
 {% for posts in post %}
 <h3>{{ posts.name }}</h3>
@@ -9,6 +13,9 @@
 <img src="{{ posts.photo.url }}">
 <p>Категория:{{ posts.cat }}</p>
 <p>Автор:{{ posts.author }}</p>
+<div class="button-container">
+    <button class="my-button"><a href="{% url 'single_post' posts.pk %}">Читать подробнее</a></button>
+</div>
 <hr>
 {% endfor %}
 {% endblock content %}

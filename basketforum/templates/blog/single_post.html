@@ -1,0 +1,13 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block content %}
+{% for i in post %}
+<h2>{{ i.name }}</h2>
+<hr>
+<h4>{{ i.text }}</h4>
+<img src="{{ i.photo.url }}" width="50%" height="400">
+<p>Категория:{{ i.cat }}</p>
+<p>Автор:{{ i.author }}</p>
+{% endfor %}
+{% endblock content %}

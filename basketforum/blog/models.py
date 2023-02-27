@@ -9,7 +9,7 @@ class CategoryPost(models.Model):
 class Post(models.Model):
     name = models.CharField(max_length=160)
     text = models.TextField()
-    photo = models.ImageField(upload_to='basket_post')
+    photo = models.ImageField(upload_to='basket_post',blank=False)
     cat = models.ForeignKey(CategoryPost,on_delete=models.CASCADE)
     author = models.ForeignKey(Users,on_delete=models.CASCADE)
 
