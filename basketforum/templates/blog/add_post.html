@@ -1,10 +1,21 @@
 {% extends 'blog/base.html' %}
 {% load static %}
 
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+{% endblock style %}
+
 {% block content %}
-<form action="{% url 'add_post' %}" method="post">
+<form action="{% url 'add_post' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Save</button>
+    <p></p><label for="{{form.username.id_for_label}}">Название статьи:</label>
+    {{ form.name }}</p>
+    <p></p><label for="{{form.text.id_for_label}}">Текст:</label>
+    {{ form.text }}</p>
+    <p></p><label for="{{form.username.id_for_label}}">Фото:</label>
+    {{ form.photo }}</p>
+    <p></p><label for="{{form.username.id_for_label}}">Категория:</label>
+    {{ form.cat }}</p>
+    <button type="submit" class="registration-form__submit-button">Save</button>
 </form>
 {% endblock content %}

@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block style %}
-    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
 {% endblock style %}
 
 {% block content %}
@@ -19,7 +19,7 @@
           <label for="{{ form.password.id_for_label }}">Пароль</label>
           {{ form.password }}
         </div>
-        <button type="submit" class="btn btn-primary">Войти</button>
+        <button type="submit" class="registration-form__submit-button">Войти</button>
         <a href="{% url 'register' %}">Нет аккаунта?</a>
       </form>
     </div>

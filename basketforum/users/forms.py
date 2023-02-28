@@ -5,10 +5,10 @@ from .models import *
 
 class UserLoginForm(AuthenticationForm):
     username = forms.CharField(widget=forms.TextInput(attrs={
-        'class': 'form-control'
+        'class': 'registration-form__input'
     }))
     password = forms.CharField(widget=forms.PasswordInput(attrs={
-        'class': 'form-control'
+        'class': 'registration-form__input'
     }))
     class Meta:
         model = Users
