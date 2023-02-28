@@ -17,8 +17,13 @@
         <li><a href="{% url 'main' %}" class="register-btn">Главная</a></li>
         <li><a href="{% url 'posts' %}">Посты</a></li>
         <li><a href="{% url 'rule' %}">Правила</a></li>
+        {% if user.is_authenticated  %}
+          <li><a href="{% url 'profile' %}">{{ user.username }}</a></li>
+          <li><a href="{% url 'logout' %}" >Выход</a></li>
+        {% else %}
         <li><a href="{% url 'login' %}" >Вход</a></li>
         <li><a href="{% url 'register' %}" class="register-btn">Регистрация</a></li>
+        {% endif %}
       </ul>
     </nav>
     <main>

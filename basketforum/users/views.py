@@ -11,11 +11,14 @@ def login(request):
             password = request.POST['password']
             user = auth.authenticate(username=username,password=password)
             if user:
+                auth.login(request, user)
                 return HttpResponseRedirect(reverse('main'))
     else:
         form = UserLoginForm
     context = {'form':form}
     return render(request,'users/login.html',context=context)
+
+
 def register(request):
     if request.method == 'POST':
         form = UserRestrationForm(data=request.POST)
@@ -26,3 +29,8 @@ def register(request):
         form = UserRestrationForm()
     context = {'form':form}
     return render(request,'users/register.html',context=context)
+
+
+def logout(request):
+    auth.logout(request)
+    return HttpResponseRedirect(reverse('main'))

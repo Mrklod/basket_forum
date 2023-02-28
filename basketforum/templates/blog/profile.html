@@ -1,0 +1,30 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block content %}
+<main>
+      <section class="user-info">
+        <div class="user-details">
+          <h1>Имя пользователя</h1>
+          <p>Электронная почта: user@example.com</p>
+          <p>Дата регистрации: 01.01.2022</p>
+        </div>
+      </section>
+      <section class="forum-activity">
+        <h2>Активность на форуме</h2>
+        <ul>
+          <li>Темы: 10</li>
+          <li>Сообщения: 50</li>
+          <li>Лайки: 100</li>
+        </ul>
+      </section>
+      <section class="favorite-teams">
+        <h2>Избранные команды</h2>
+        <ul>
+          <li><a href="#">Команда 1</a></li>
+          <li><a href="#">Команда 2</a></li>
+          <li><a href="#">Команда 3</a></li>
+        </ul>
+      </section>
+    </main>
+{% endblock content%}
